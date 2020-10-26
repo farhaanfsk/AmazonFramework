@@ -1,0 +1,16 @@
+version : '3'
+services :
+  maven:
+    container_name : Maven-Java
+    image : maven:3.5.3-jdk-8-alpine
+    volumes :
+      - .:/testfm
+      - ~/.m2:/root/.m2
+    depends_on :
+      - selenium
+    command : mvn -f /testfm clean install
+  selenium:
+    container_name : selenium
+    image : selenium/standalone-chrome:latest
+    ports :
+      - 4444:4444
