@@ -17,7 +17,7 @@ public class HomePage extends Page {
 	/**.
 	 * web elements
 	 */
-	@FindBy(id = "nav-link-yourAccount")
+	@FindBy(id = "nav-signin-tooltip")
 	private WebElement signIn;
 	/**
 	 * constructor for initialization
